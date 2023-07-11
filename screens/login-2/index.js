@@ -2,7 +2,12 @@ import { Pressable } from "react-native";
 import React, { useState } from "react";
 import { Text, View, TouchableOpacity, Image, TouchableHighlight, TextInput, StyleSheet } from "react-native";
 
-const Login2 = () => {
+const Login2 = ({
+  route
+}) => {
+  const {
+    fcd
+  } = route.params || {};
   const [selected, setSelected] = useState(false);
 
   const onPress = () => {
