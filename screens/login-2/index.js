@@ -1,3 +1,6 @@
+import { rest_auth_password_reset_confirm_create } from "../../store/financeecoleAPI/passwordResetConfirms.slice.js";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { Pressable } from "react-native";
 import React, { useState } from "react";
 import { Text, View, TouchableOpacity, Image, TouchableHighlight, TextInput, StyleSheet } from "react-native";
@@ -5,9 +8,11 @@ import { Text, View, TouchableOpacity, Image, TouchableHighlight, TextInput, Sty
 const Login2 = ({
   route
 }) => {
-  const {
-    fcd
-  } = route.params || {};
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(rest_auth_password_reset_confirm_create());
+  }, []);
+  const {} = route.params || {};
   const [selected, setSelected] = useState(false);
 
   const onPress = () => {
